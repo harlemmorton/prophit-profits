@@ -7,6 +7,7 @@ from PIL import Image, ImageTk
 import tkinter.ttk as ttk
 import time
 import threading
+import sys
 
 BASE_URL = 'https://paper-api.alpaca.markets'
 ACCOUNT_URL = f'{BASE_URL}/v2/account'
@@ -86,6 +87,9 @@ def deactivate_bot():
     else:
         print("Market is closed. Bot is already deactivated.")
 
+    sys.exit()
+
+   
 
 def buy_stocks():
     stocks_to_buy = ['AAPL', 'TSLA', 'AMZN', 'GOOG', 'META', 'MSFT']
@@ -279,7 +283,7 @@ def orderingGUI():
 welcome = tk.Tk()
 welcome.title('Profit Prophets - Alpaca Trading API')
 welcome.state('zoomed')
-image = Image.open('Profit Prophets.jpg')
+image = Image.open(r'C:\Users\zaria.ascue\Desktop\Profit Prophets.jpg')
 image = ImageTk.PhotoImage(image)
 
 # Set up frames for layout
@@ -290,7 +294,7 @@ left_frame.pack(side=LEFT)
 
 # Load logo
 try:
-    image = Image.open('Profit Prophets.jpg')
+    image = Image.open(r'C:\Users\zaria.ascue\Desktop\Profit Prophets.jpg')
     image = ImageTk.PhotoImage(image)
     image_label = tk.Label(top_frame, image=image)
     image_label.pack(pady=20)
